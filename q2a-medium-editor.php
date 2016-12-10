@@ -117,10 +117,10 @@ class qa_medium_editor
 
         $maxfilesize = qa_opt('medium_editor_upload_max_size');
         $filesize = $this->bytes_to_mega_html($maxfilesize)."MB";
-        $html = '<textarea name="'.$fieldname.'" id="'.$fieldname.'"  class="editable qa-form-tall-text">'.$content.'</textarea>';
+        $html = '<textarea name="'.$fieldname.'" id="'.$fieldname.'"  class="editable-' . $fieldname. ' qa-form-tall-text">'.$content.'</textarea>';
         $html .= "
         <script type=\"text/javascript\">
-        var editor = new MediumEditor('.editable', {
+        var editor = new MediumEditor('.editable-" . $fieldname . "', {
             placeholder: {
                 text: '". $placeholder ."',
                 hydOnClick: true
@@ -131,7 +131,7 @@ class qa_medium_editor
             spellcheck: false,
         });
         $(function() {
-            $('.editable').mediumInsert({
+            $('.editable-" . $fieldname . "').mediumInsert({
                 editor: editor,
                 addons: {";
         if (strpos(qa_opt('site_theme'), 'q2a-material-lite') !== false) {
