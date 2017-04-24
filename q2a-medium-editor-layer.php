@@ -104,6 +104,8 @@ class qa_html_theme_layer extends qa_html_theme_base
         $this->output('<script src="'. QA_HTML_THEME_LAYER_URLTOROOT . 'js/q2a-embeds.js' . '"></script>');
         $this->output('<script src="'. QA_HTML_THEME_LAYER_URLTOROOT . 'js/q2a-videos.js' . '"></script>');
         $this->output('<script src="'. QA_HTML_THEME_LAYER_URLTOROOT . 'js/q2a-editor.js' . '"></script>');
+        $this->output('<script src="//assets.transloadit.com/js/jquery.transloadit2-v2-latest.js"></script>');
+        $this->output('<script src="'. QA_HTML_THEME_LAYER_URLTOROOT . 'js/transloadit.js' . '"></script>');
         if (strpos(qa_opt('site_theme'), 'q2a-material-lite') !== false) {
             $this->output('<script src="'. QA_HTML_THEME_LAYER_URLTOROOT . 'js/q2a-images.js' . '"></script>');
             $this->output('<script src="'. QA_HTML_THEME_LAYER_URLTOROOT . 'js/dialog-polyfill.js' . '"></script>');
@@ -137,28 +139,8 @@ class qa_html_theme_layer extends qa_html_theme_base
 
     function output_dialog()
     {
-        $html = <<<EOT
-<dialog id="editor-error" class="mdl-dialog">
-    <h4 class="mdl-dialog__title"></h4>
-    <div class="mdl-dialog__content">
-        <p>
-
-        </p>
-    </div>
-    <div class="mdl-dialog__actions">
-        <button type="button" class="mdl-button ok">OK</button>
-    </div>
-</dialog>
-<script>
-    var errDialog = document.querySelector('#editor-error');
-    if (! errDialog.showModal) {
-        dialogPolyfill.registerDialog(errDialog);
-    }
-    errDialog.querySelector('.ok').addEventListener('click', function() {
-        errDialog.close();
-    });
-</script>
-EOT;
+        $html = file_get_contents(QA_PLUGIN_DIR . 'q2a-medium-editor/html/image_error_dialog.html');
+        $html .= file_get_contents(QA_PLUGIN_DIR . 'q2a-medium-editor/html/video_dialog.html');
         $this->output($html);
     }
 

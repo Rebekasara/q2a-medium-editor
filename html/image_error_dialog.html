@@ -1,0 +1,21 @@
+<dialog id="editor-error" class="mdl-dialog">
+    <h4 class="mdl-dialog__title"></h4>
+    <div class="mdl-dialog__content">
+        <p>
+
+        </p>
+    </div>
+    <div class="mdl-dialog__actions">
+        <button type="button" class="mdl-button ok">OK</button>
+    </div>
+</dialog>
+<script>
+    var errDialog = document.querySelector('#editor-error');
+    if (! errDialog.showModal) {
+        dialogPolyfill.registerDialog(errDialog);
+    }
+    errDialog.querySelector('.ok').addEventListener('click', function() {
+        errDialog.close();
+    });
+</script>
+

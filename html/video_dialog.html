@@ -1,0 +1,59 @@
+<dialog id="video-dialog" class="mdl-dialog">
+    <h4 class="mdl-dialog__title">動画の公開</h4>
+    <div class="mdl-dialog__content">
+    <p>動画の最大サイズは300MBです。動画は非常にサイズが大きいため30秒以内の動画をお勧めします。アップロードには10分程度かかる場合があります</p>
+    <h5>スマホから投稿される方へ</h5>
+    <p>スマホで撮影した動画を簡単にアップロードできます。データ通信量が大変大きいため、<strong>WiFi</strong>に接続の上、ご投稿ください。</p>
+    <div id="upload-section">
+        <form id="upload-form" action="" enctype="multipart/form-data" method="POST" onsubmit="return false">
+        <div>
+        <span class="video-step">1. ファイルを選択してください。</span>
+        <div>
+            <input type="file" id="movie-file" name="my_file" accept="video/*" />
+        </div>
+        <div id="video-size-section">
+            動画サイズ: <span id="video-size">0</span> MB (最大 300MB)
+            <span id="video-size-error"></span>
+        </div>
+        </div>
+        <br/>
+        <div>
+        <span class="video-step">2. 動画サイズを確認の上、アップロードしてください</span>
+        <span class="video-step"></span>
+        <button id="upload-button" type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" disabled>
+            アップロードする
+        </button>
+        </div>
+        </form>
+        <div id="v-upload-progress" class="mdl-progress mdl-js-progress"></div>
+        <div id="v-upload-message"></div>
+    </div>
+  </div>
+    <div class="mdl-dialog__actions">
+        <button type="button" class="mdl-button ok">キャンセル</button>
+    </div>
+</dialog>
+<script>
+    var videoDialog = document.querySelector('#video-dialog');
+    if (!videoDialog.showModal) {
+        dialogPolyfill.registerDialog(errDialog);
+    }
+    videoDialog.querySelector('.ok').addEventListener('click', function() {
+        videoDialog.close();
+    });
+</script>
+<style>
+dialog#video-dialog {
+    min-width: 350px;
+}
+#video-size-section {
+
+}
+#video-size {
+
+}
+#video-size-error {
+    color: #ff0000;
+
+}
+</style>
