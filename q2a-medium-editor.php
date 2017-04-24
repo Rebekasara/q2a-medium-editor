@@ -158,6 +158,7 @@ class qa_medium_editor
                             mdlThemeDialog: ". $mdl ."
                         }
                     },
+                    videos: true,
                     embeds: false,
                     embeds2: {
                         styles: null,

@@ -6,7 +6,7 @@
     var pluginName = 'mediumInsert',
         addonName = 'Embeds2', // first char is uppercase
         defaults = {
-            label: '<span class="fa fa-youtube-play"></span>',
+            label: '<span class="fa fa-youtube"></span>',
             placeholder: 'YouTubeの動画URLを貼ってください。',
             captions: false,
             captionPlaceholder: 'Type caption (optional)',

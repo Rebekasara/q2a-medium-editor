@@ -102,6 +102,7 @@ class qa_html_theme_layer extends qa_html_theme_base
             $this->output('<script src="'. $components . $js . '"></script>');
         }
         $this->output('<script src="'. QA_HTML_THEME_LAYER_URLTOROOT . 'js/q2a-embeds.js' . '"></script>');
+        $this->output('<script src="'. QA_HTML_THEME_LAYER_URLTOROOT . 'js/q2a-videos.js' . '"></script>');
         $this->output('<script src="'. QA_HTML_THEME_LAYER_URLTOROOT . 'js/q2a-editor.js' . '"></script>');
         if (strpos(qa_opt('site_theme'), 'q2a-material-lite') !== false) {
             $this->output('<script src="'. QA_HTML_THEME_LAYER_URLTOROOT . 'js/q2a-images.js' . '"></script>');
