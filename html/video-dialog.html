@@ -128,7 +128,7 @@
                     console.log('Assembly finished successfully with', assembly.ok);
                     console.log(assembly);
                     $('.medium-editor-insert-plugin .medium-insert-videos').html(
-                        '<figure><video class="video-js" controls preload="auto" width="90%" poster="' + uploadedData['image_thumb'] + '" data-setup="{}">' +
+                        '<figure><video class="video-js" controls preload="auto" poster="' + uploadedData['image_thumb'] + '" data-setup="{}">' +
                         '<source id="mp4-source" type="video/mp4" src="' + uploadedData['video_mp4'] + '">' +
                         '<source id="webm-source" src="' + uploadedData['video_webm'] + '" type="video/webm">' +
                         '</video>' +
